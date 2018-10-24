@@ -1,0 +1,70 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2016
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SyC.CGRyF.Administrativo", "SyC.CGRyF.Funcionario\SyC.CGRyF.Administrativo.csproj", "{0A4E7F75-741D-4F12-A354-E54CF5C08803}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SyC.CGRyF.Negocio", "SyC.CGRyF.Negocio\SyC.CGRyF.Negocio.csproj", "{AFD7C7EB-1703-4C9A-ABDE-C145A721F6B0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SyC.CGRyF.AccesoDatos", "SyC.CGRyF.AccesoDatos\SyC.CGRyF.AccesoDatos.csproj", "{BBC6F996-CC9A-4620-B19A-AC5A3080B49B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SyC.CGRyF.Utilerias", "SyC.CGRyF.Utilerias\SyC.CGRyF.Utilerias.csproj", "{DF568765-6C8E-40AF-87D3-7D820D005674}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SyC.CGRyF.Publico", "SyC.CGRyF.Publico\SyC.CGRyF.Publico.csproj", "{49551845-1486-4EEA-90A4-BB35C58436E0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0A4E7F75-741D-4F12-A354-E54CF5C08803}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A4E7F75-741D-4F12-A354-E54CF5C08803}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A4E7F75-741D-4F12-A354-E54CF5C08803}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A4E7F75-741D-4F12-A354-E54CF5C08803}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AFD7C7EB-1703-4C9A-ABDE-C145A721F6B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFD7C7EB-1703-4C9A-ABDE-C145A721F6B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFD7C7EB-1703-4C9A-ABDE-C145A721F6B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFD7C7EB-1703-4C9A-ABDE-C145A721F6B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BBC6F996-CC9A-4620-B19A-AC5A3080B49B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBC6F996-CC9A-4620-B19A-AC5A3080B49B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBC6F996-CC9A-4620-B19A-AC5A3080B49B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBC6F996-CC9A-4620-B19A-AC5A3080B49B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF568765-6C8E-40AF-87D3-7D820D005674}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF568765-6C8E-40AF-87D3-7D820D005674}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF568765-6C8E-40AF-87D3-7D820D005674}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF568765-6C8E-40AF-87D3-7D820D005674}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49551845-1486-4EEA-90A4-BB35C58436E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49551845-1486-4EEA-90A4-BB35C58436E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49551845-1486-4EEA-90A4-BB35C58436E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49551845-1486-4EEA-90A4-BB35C58436E0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7A327EA5-06B6-4B46-9837-10F47FFB3FEF}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 6
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://172.29.149.66:8080/tfs/fabrica%20de%20software%202018
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = SyC.CGRyF.AccesoDatos\\SyC.CGRyF.AccesoDatos.csproj
+		SccProjectName1 = SyC.CGRyF.AccesoDatos
+		SccLocalPath1 = SyC.CGRyF.AccesoDatos
+		SccProjectUniqueName2 = SyC.CGRyF.Funcionario\\SyC.CGRyF.Administrativo.csproj
+		SccProjectName2 = SyC.CGRyF.Funcionario
+		SccLocalPath2 = SyC.CGRyF.Funcionario
+		SccProjectUniqueName3 = SyC.CGRyF.Negocio\\SyC.CGRyF.Negocio.csproj
+		SccProjectName3 = SyC.CGRyF.Negocio
+		SccLocalPath3 = SyC.CGRyF.Negocio
+		SccProjectUniqueName4 = SyC.CGRyF.Publico\\SyC.CGRyF.Publico.csproj
+		SccProjectName4 = SyC.CGRyF.Publico
+		SccLocalPath4 = SyC.CGRyF.Publico
+		SccProjectUniqueName5 = SyC.CGRyF.Utilerias\\SyC.CGRyF.Utilerias.csproj
+		SccProjectName5 = SyC.CGRyF.Utilerias
+		SccLocalPath5 = SyC.CGRyF.Utilerias
+	EndGlobalSection
+EndGlobal

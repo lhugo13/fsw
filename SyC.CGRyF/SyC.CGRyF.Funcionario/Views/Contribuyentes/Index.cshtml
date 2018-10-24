@@ -1,0 +1,268 @@
+﻿@model SyC.CGRyF.Utilerias.Paginador<SyC.CGRyF.AccesoDatos.tblPuucContribuyente>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            cuenta)
+        </th>
+        <th>
+            estatus)
+        </th>
+        <th>
+            granContribuyenteOrParaestatal)
+        </th>
+        <th>
+            nombreComercial)
+        </th>
+        <th>
+            tipoPersona)
+        </th>
+        <th>
+            nombre)
+        </th>
+        <th>
+            apellidoPaterno)
+        </th>
+        <th>
+            apellidoMaterno)
+        </th>
+        <th>
+            rfc)
+        </th>
+        <th>
+            curp)
+        </th>
+        <th>
+            idSubSector)
+        </th>
+        <th>
+            fechaRegistro)
+        </th>
+        <th>
+            fechaModificacion)
+        </th>
+        <th>
+            isInscritoREPDA)
+        </th>
+        <th>
+            tieneFiel)
+        </th>
+        <th>
+            actividadPreponderante)
+        </th>
+        <th>
+            esCPR)
+        </th>
+        <th>
+            identificador)
+        </th>
+        <th>
+            preguntaSecreta)
+        </th>
+        <th>
+            esRepresentante)
+        </th>
+        <th>
+            grupoEmpresarial)
+        </th>
+        <th>
+            countEnTramite)
+        </th>
+        <th>
+            countSinTitulo)
+        </th>
+        <th>
+            privilegioEnvio)
+        </th>
+        <th>
+            nombreCompleto)
+        </th>
+        <th>
+            aplicaFortamun)
+        </th>
+        <th>
+            isCFE)
+        </th>
+        <th>
+            alias)
+        </th>
+        <th>
+            idSubTipoPersona)
+        </th>
+        <th>
+            beneficiarioFiscal)
+        </th>
+        <th>
+            observaciones)
+        </th>
+        <th>
+            idClase)
+        </th>
+        <th>
+            idWallet)
+        </th>
+        <th>
+            isMunicipal)
+        </th>
+        <th>
+            validadoSAT)
+        </th>
+        <th>
+            idTipoSociedad)
+        </th>
+        <th>
+            tblPuucContadorPublico.nombre)
+        </th>
+        <th>
+            tblPuucRepresentanteLegal.nombre)
+        </th>
+        <th>
+            tblSubRama.nombre)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.cuenta)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.estatus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.granContribuyenteOrParaestatal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nombreComercial)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tipoPersona)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.apellidoPaterno)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.apellidoMaterno)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.rfc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.curp)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.idSubSector)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fechaRegistro)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fechaModificacion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.isInscritoREPDA)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tieneFiel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.actividadPreponderante)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.esCPR)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.identificador)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.preguntaSecreta)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.esRepresentante)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.grupoEmpresarial)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.countEnTramite)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.countSinTitulo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.privilegioEnvio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nombreCompleto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.aplicaFortamun)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.isCFE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.alias)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.idSubTipoPersona)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.beneficiarioFiscal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.observaciones)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.idClase)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.idWallet)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.isMunicipal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.validadoSAT)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.idTipoSociedad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tblPuucContadorPublico.nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tblPuucRepresentanteLegal.nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tblSubRama.nombre)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.id })
+            </td>
+        </tr>
+        <tr>
+            <td colspan="39">
+                @Html.Partial("_PagingPartial", Model)
+            </td>
+        </tr>
+    }
+
+</table>

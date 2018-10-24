@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="4876cc8ac2474c238903d62a260eb94c" Name="Diagram1">
+        <EntityTypeShape EntityType="CNA_SIRFICModel.tblACAsistencia" Width="1.5" PointX="5.25" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CNA_SIRFICModel.tblLocalidadINEGI" Width="1.5" PointX="6" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CNA_SIRFICModel.tblPuucContadorPublico" Width="1.5" PointX="0.75" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="CNA_SIRFICModel.tblPuucContribuyente" Width="1.5" PointX="3" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CNA_SIRFICModel.tblPuucDomicilioContribuyente" Width="1.5" PointX="8.25" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CNA_SIRFICModel.tblPuucRelContribuyenteCorreo" Width="1.5" PointX="5.25" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CNA_SIRFICModel.tblPuucRelContribuyenteTelefono" Width="1.5" PointX="5.25" PointY="15.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CNA_SIRFICModel.tblPuucRelDomicilioContribuyente" Width="1.5" PointX="10.5" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CNA_SIRFICModel.tblPuucRepresentanteLegal" Width="1.5" PointX="0.75" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CNA_SIRFICModel.tblSubRama" Width="1.5" PointX="0.75" PointY="11" IsExpanded="true" />
+        <AssociationConnector Association="CNA_SIRFICModel.FK_tblACAsistencia_tblPuucContribuyente" ManuallyRouted="false" />
+        <AssociationConnector Association="CNA_SIRFICModel.FK_tblPuucDomicilioContribuyente_tblLocalidadINEGI" ManuallyRouted="false" />
+        <AssociationConnector Association="CNA_SIRFICModel.FK_tblPuucContribuyente_tblPuucContadorPublico" ManuallyRouted="false" />
+        <AssociationConnector Association="CNA_SIRFICModel.FK_tblPuucContribuyente_tblPuucRepresentanteLegal" ManuallyRouted="false" />
+        <AssociationConnector Association="CNA_SIRFICModel.FK_tblPuucContribuyente_tblSubRama" ManuallyRouted="false" />
+        <AssociationConnector Association="CNA_SIRFICModel.FK_tblPuucDomicilioContribuyente_tblPuucContribuyente" ManuallyRouted="false" />
+        <AssociationConnector Association="CNA_SIRFICModel.FK_tblPuucRelContribuyenteCorreos_tblPuucContribuyente" ManuallyRouted="false" />
+        <AssociationConnector Association="CNA_SIRFICModel.FK_tblPuucRelContribuyenteTelefonos_tblPuucContribuyente" ManuallyRouted="false" />
+        <AssociationConnector Association="CNA_SIRFICModel.FK_tblPuucRelDomicilioContribuyente_tblPuucContribuyente" ManuallyRouted="false" />
+        <AssociationConnector Association="CNA_SIRFICModel.FK_tblPuucRelDomicilioContribuyente_tblPuucDomicilioContribuyente" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
