@@ -1,0 +1,6 @@
+C:\Users\DESARROLLO\Documents\GitHub\fsw\SyC.CGRyF\SyC.CGRyF.Utilerias\bin\Debug\SyC.CGRyF.Utilerias.dll
+C:\Users\DESARROLLO\Documents\GitHub\fsw\SyC.CGRyF\SyC.CGRyF.Utilerias\bin\Debug\SyC.CGRyF.Utilerias.pdb
+C:\Users\DESARROLLO\Documents\GitHub\fsw\SyC.CGRyF\SyC.CGRyF.Utilerias\obj\Debug\SyC.CGRyF.Utilerias.csprojAssemblyReference.cache
+C:\Users\DESARROLLO\Documents\GitHub\fsw\SyC.CGRyF\SyC.CGRyF.Utilerias\obj\Debug\SyC.CGRyF.Utilerias.csproj.CoreCompileInputs.cache
+C:\Users\DESARROLLO\Documents\GitHub\fsw\SyC.CGRyF\SyC.CGRyF.Utilerias\obj\Debug\SyC.CGRyF.Utilerias.dll
+C:\Users\DESARROLLO\Documents\GitHub\fsw\SyC.CGRyF\SyC.CGRyF.Utilerias\obj\Debug\SyC.CGRyF.Utilerias.pdb

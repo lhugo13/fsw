@@ -1,0 +1,348 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CNA_SIRFICModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="tblACAsistencia">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="tipoAsistencia" Type="Int32" />
+    <Property Name="idContribuyente" Type="Int64" />
+    <Property Name="fecha" Type="DateTime" Precision="3" />
+    <Property Name="tiempoAtencion" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="tblPuucContribuyente" Relationship="Self.FK_tblACAsistencia_tblPuucContribuyente" FromRole="tblACAsistencia" ToRole="tblPuucContribuyente" />
+  </EntityType>
+  <EntityType Name="tblLocalidadINEGI">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" />
+    <Property Name="idMunicipio" Type="Int64" Nullable="false" />
+    <Property Name="clave" Type="Int32" Nullable="false" />
+    <Property Name="nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="estatus" Type="Boolean" Nullable="false" />
+    <Property Name="numHabitantes" Type="Int64" Nullable="false" />
+    <NavigationProperty Name="tblPuucDomicilioContribuyentes" Relationship="Self.FK_tblPuucDomicilioContribuyente_tblLocalidadINEGI" FromRole="tblLocalidadINEGI" ToRole="tblPuucDomicilioContribuyente" />
+  </EntityType>
+  <EntityType Name="tblPuucContadorPublico">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="apellidoPaterno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="apellidoMaterno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="rfc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="curp" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="empresaRepresentada" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="idDomicilio" Type="Int64" />
+    <Property Name="numeroRegistroCP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="tblPuucContribuyentes" Relationship="Self.FK_tblPuucContribuyente_tblPuucContadorPublico" FromRole="tblPuucContadorPublico" ToRole="tblPuucContribuyente" />
+  </EntityType>
+  <EntityType Name="tblPuucContribuyente">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idContadorPublico" Type="Int64" />
+    <Property Name="cuenta" Type="String" MaxLength="17" FixedLength="false" Unicode="false" />
+    <Property Name="estatus" Type="Boolean" Nullable="false" />
+    <Property Name="granContribuyenteOrParaestatal" Type="Boolean" Nullable="false" />
+    <Property Name="nombreComercial" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="tipoPersona" Type="Int64" Nullable="false" />
+    <Property Name="nombre" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="apellidoPaterno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="apellidoMaterno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="rfc" Type="String" MaxLength="14" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="curp" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="idRepresentanteLegal" Type="Int64" />
+    <Property Name="idSubSector" Type="Int64" />
+    <Property Name="fechaRegistro" Type="DateTime" Precision="3" />
+    <Property Name="fechaModificacion" Type="DateTime" Precision="3" />
+    <Property Name="isInscritoREPDA" Type="Boolean" />
+    <Property Name="tieneFiel" Type="Boolean" />
+    <Property Name="actividadPreponderante" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="idSubRama" Type="Int64" />
+    <Property Name="esCPR" Type="Boolean" />
+    <Property Name="identificador" Type="Int64" />
+    <Property Name="preguntaSecreta" Type="Int32" />
+    <Property Name="esRepresentante" Type="Boolean" />
+    <Property Name="grupoEmpresarial" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="countEnTramite" Type="Int64" />
+    <Property Name="countSinTitulo" Type="Int64" />
+    <Property Name="privilegioEnvio" Type="Boolean" />
+    <Property Name="nombreCompleto" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="aplicaFortamun" Type="Boolean" />
+    <Property Name="isCFE" Type="Boolean" />
+    <Property Name="alias" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="idSubTipoPersona" Type="Int64" />
+    <Property Name="beneficiarioFiscal" Type="Boolean" />
+    <Property Name="observaciones" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="idClase" Type="Int64" />
+    <Property Name="idWallet" Type="Int64" />
+    <Property Name="isMunicipal" Type="Boolean" />
+    <Property Name="validadoSAT" Type="Boolean" Nullable="false" />
+    <Property Name="idTipoSociedad" Type="Int64" />
+    <NavigationProperty Name="tblACAsistencias" Relationship="Self.FK_tblACAsistencia_tblPuucContribuyente" FromRole="tblPuucContribuyente" ToRole="tblACAsistencia" />
+    <NavigationProperty Name="tblPuucContadorPublico" Relationship="Self.FK_tblPuucContribuyente_tblPuucContadorPublico" FromRole="tblPuucContribuyente" ToRole="tblPuucContadorPublico" />
+    <NavigationProperty Name="tblPuucRepresentanteLegal" Relationship="Self.FK_tblPuucContribuyente_tblPuucRepresentanteLegal" FromRole="tblPuucContribuyente" ToRole="tblPuucRepresentanteLegal" />
+    <NavigationProperty Name="tblSubRama" Relationship="Self.FK_tblPuucContribuyente_tblSubRama" FromRole="tblPuucContribuyente" ToRole="tblSubRama" />
+    <NavigationProperty Name="tblPuucDomicilioContribuyentes" Relationship="Self.FK_tblPuucDomicilioContribuyente_tblPuucContribuyente" FromRole="tblPuucContribuyente" ToRole="tblPuucDomicilioContribuyente" />
+    <NavigationProperty Name="tblPuucRelContribuyenteCorreos" Relationship="Self.FK_tblPuucRelContribuyenteCorreos_tblPuucContribuyente" FromRole="tblPuucContribuyente" ToRole="tblPuucRelContribuyenteCorreos" />
+    <NavigationProperty Name="tblPuucRelContribuyenteTelefonos" Relationship="Self.FK_tblPuucRelContribuyenteTelefonos_tblPuucContribuyente" FromRole="tblPuucContribuyente" ToRole="tblPuucRelContribuyenteTelefonos" />
+    <NavigationProperty Name="tblPuucRelDomicilioContribuyentes" Relationship="Self.FK_tblPuucRelDomicilioContribuyente_tblPuucContribuyente" FromRole="tblPuucContribuyente" ToRole="tblPuucRelDomicilioContribuyente" />
+  </EntityType>
+  <EntityType Name="tblPuucDomicilioContribuyente">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idAsentamientoHumano" Type="Int64" Nullable="false" />
+    <Property Name="idCamino" Type="Int64" />
+    <Property Name="idCarretera" Type="Int64" />
+    <Property Name="descripcion" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="numeroExterior1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="numeroExterior2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="viaComunicacion" Type="Boolean" Nullable="false" />
+    <Property Name="vialidad" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="vialidadPosterior" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="tipoDomicilio" Type="Int64" />
+    <Property Name="entreVialidad1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="entreVialidad2" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="idContribuyente" Type="Int64" />
+    <Property Name="tipoVialidad" Type="Int32" />
+    <Property Name="numeroInterior" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="mismoDomicilio" Type="Int32" />
+    <Property Name="idLocalidadINEGI" Type="Int64" />
+    <NavigationProperty Name="tblLocalidadINEGI" Relationship="Self.FK_tblPuucDomicilioContribuyente_tblLocalidadINEGI" FromRole="tblPuucDomicilioContribuyente" ToRole="tblLocalidadINEGI" />
+    <NavigationProperty Name="tblPuucContribuyente" Relationship="Self.FK_tblPuucDomicilioContribuyente_tblPuucContribuyente" FromRole="tblPuucDomicilioContribuyente" ToRole="tblPuucContribuyente" />
+    <NavigationProperty Name="tblPuucRelDomicilioContribuyentes" Relationship="Self.FK_tblPuucRelDomicilioContribuyente_tblPuucDomicilioContribuyente" FromRole="tblPuucDomicilioContribuyente" ToRole="tblPuucRelDomicilioContribuyente" />
+  </EntityType>
+  <EntityType Name="tblPuucRelContribuyenteCorreo">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idContribuyente" Type="Int64" />
+    <Property Name="correo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="predeterminado" Type="Boolean" />
+    <NavigationProperty Name="tblPuucContribuyente" Relationship="Self.FK_tblPuucRelContribuyenteCorreos_tblPuucContribuyente" FromRole="tblPuucRelContribuyenteCorreos" ToRole="tblPuucContribuyente" />
+  </EntityType>
+  <EntityType Name="tblPuucRelContribuyenteTelefono">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idContribuyente" Type="Int64" Nullable="false" />
+    <Property Name="numeroTelefonico" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="lada" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Name="extension" Type="String" MaxLength="5" FixedLength="true" Unicode="false" />
+    <Property Name="tipo" Type="Int32" />
+    <NavigationProperty Name="tblPuucContribuyente" Relationship="Self.FK_tblPuucRelContribuyenteTelefonos_tblPuucContribuyente" FromRole="tblPuucRelContribuyenteTelefonos" ToRole="tblPuucContribuyente" />
+  </EntityType>
+  <EntityType Name="tblPuucRelDomicilioContribuyente">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idContribuyente" Type="Int64" Nullable="false" />
+    <Property Name="idDomicilioContribuyente" Type="Int64" Nullable="false" />
+    <NavigationProperty Name="tblPuucContribuyente" Relationship="Self.FK_tblPuucRelDomicilioContribuyente_tblPuucContribuyente" FromRole="tblPuucRelDomicilioContribuyente" ToRole="tblPuucContribuyente" />
+    <NavigationProperty Name="tblPuucDomicilioContribuyente" Relationship="Self.FK_tblPuucRelDomicilioContribuyente_tblPuucDomicilioContribuyente" FromRole="tblPuucRelDomicilioContribuyente" ToRole="tblPuucDomicilioContribuyente" />
+  </EntityType>
+  <EntityType Name="tblPuucRepresentanteLegal">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="apellidoPaterno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="apellidoMaterno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="rfc" Type="String" MaxLength="14" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="curp" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="idDomicilio" Type="Int64" />
+    <NavigationProperty Name="tblPuucContribuyentes" Relationship="Self.FK_tblPuucContribuyente_tblPuucRepresentanteLegal" FromRole="tblPuucRepresentanteLegal" ToRole="tblPuucContribuyente" />
+  </EntityType>
+  <EntityType Name="tblSubRama">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="clave" Type="Int32" Nullable="false" />
+    <Property Name="nombre" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="estatus" Type="Boolean" Nullable="false" />
+    <Property Name="idRama" Type="Int64" Nullable="false" />
+    <NavigationProperty Name="tblPuucContribuyentes" Relationship="Self.FK_tblPuucContribuyente_tblSubRama" FromRole="tblSubRama" ToRole="tblPuucContribuyente" />
+  </EntityType>
+  <Association Name="FK_tblACAsistencia_tblPuucContribuyente">
+    <End Role="tblPuucContribuyente" Type="Self.tblPuucContribuyente" Multiplicity="0..1" />
+    <End Role="tblACAsistencia" Type="Self.tblACAsistencia" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblPuucContribuyente">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tblACAsistencia">
+        <PropertyRef Name="idContribuyente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblPuucDomicilioContribuyente_tblLocalidadINEGI">
+    <End Role="tblLocalidadINEGI" Type="Self.tblLocalidadINEGI" Multiplicity="0..1" />
+    <End Role="tblPuucDomicilioContribuyente" Type="Self.tblPuucDomicilioContribuyente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblLocalidadINEGI">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tblPuucDomicilioContribuyente">
+        <PropertyRef Name="idLocalidadINEGI" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblPuucContribuyente_tblPuucContadorPublico">
+    <End Role="tblPuucContadorPublico" Type="Self.tblPuucContadorPublico" Multiplicity="0..1" />
+    <End Role="tblPuucContribuyente" Type="Self.tblPuucContribuyente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblPuucContadorPublico">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tblPuucContribuyente">
+        <PropertyRef Name="idContadorPublico" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblPuucContribuyente_tblPuucRepresentanteLegal">
+    <End Role="tblPuucRepresentanteLegal" Type="Self.tblPuucRepresentanteLegal" Multiplicity="0..1" />
+    <End Role="tblPuucContribuyente" Type="Self.tblPuucContribuyente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblPuucRepresentanteLegal">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tblPuucContribuyente">
+        <PropertyRef Name="idRepresentanteLegal" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblPuucContribuyente_tblSubRama">
+    <End Role="tblSubRama" Type="Self.tblSubRama" Multiplicity="0..1" />
+    <End Role="tblPuucContribuyente" Type="Self.tblPuucContribuyente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblSubRama">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tblPuucContribuyente">
+        <PropertyRef Name="idSubRama" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblPuucDomicilioContribuyente_tblPuucContribuyente">
+    <End Role="tblPuucContribuyente" Type="Self.tblPuucContribuyente" Multiplicity="0..1" />
+    <End Role="tblPuucDomicilioContribuyente" Type="Self.tblPuucDomicilioContribuyente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblPuucContribuyente">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tblPuucDomicilioContribuyente">
+        <PropertyRef Name="idContribuyente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblPuucRelContribuyenteCorreos_tblPuucContribuyente">
+    <End Role="tblPuucContribuyente" Type="Self.tblPuucContribuyente" Multiplicity="0..1" />
+    <End Role="tblPuucRelContribuyenteCorreos" Type="Self.tblPuucRelContribuyenteCorreo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblPuucContribuyente">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tblPuucRelContribuyenteCorreos">
+        <PropertyRef Name="idContribuyente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblPuucRelContribuyenteTelefonos_tblPuucContribuyente">
+    <End Role="tblPuucContribuyente" Type="Self.tblPuucContribuyente" Multiplicity="1" />
+    <End Role="tblPuucRelContribuyenteTelefonos" Type="Self.tblPuucRelContribuyenteTelefono" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblPuucContribuyente">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tblPuucRelContribuyenteTelefonos">
+        <PropertyRef Name="idContribuyente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblPuucRelDomicilioContribuyente_tblPuucContribuyente">
+    <End Role="tblPuucContribuyente" Type="Self.tblPuucContribuyente" Multiplicity="1" />
+    <End Role="tblPuucRelDomicilioContribuyente" Type="Self.tblPuucRelDomicilioContribuyente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblPuucContribuyente">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tblPuucRelDomicilioContribuyente">
+        <PropertyRef Name="idContribuyente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblPuucRelDomicilioContribuyente_tblPuucDomicilioContribuyente">
+    <End Role="tblPuucDomicilioContribuyente" Type="Self.tblPuucDomicilioContribuyente" Multiplicity="1" />
+    <End Role="tblPuucRelDomicilioContribuyente" Type="Self.tblPuucRelDomicilioContribuyente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblPuucDomicilioContribuyente">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tblPuucRelDomicilioContribuyente">
+        <PropertyRef Name="idDomicilioContribuyente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="CNA_SIRFIC_Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tblACAsistencias" EntityType="Self.tblACAsistencia" />
+    <EntitySet Name="tblLocalidadINEGIs" EntityType="Self.tblLocalidadINEGI" />
+    <EntitySet Name="tblPuucContadorPublicoes" EntityType="Self.tblPuucContadorPublico" />
+    <EntitySet Name="tblPuucContribuyentes" EntityType="Self.tblPuucContribuyente" />
+    <EntitySet Name="tblPuucDomicilioContribuyentes" EntityType="Self.tblPuucDomicilioContribuyente" />
+    <EntitySet Name="tblPuucRelContribuyenteCorreos" EntityType="Self.tblPuucRelContribuyenteCorreo" />
+    <EntitySet Name="tblPuucRelContribuyenteTelefonos" EntityType="Self.tblPuucRelContribuyenteTelefono" />
+    <EntitySet Name="tblPuucRelDomicilioContribuyentes" EntityType="Self.tblPuucRelDomicilioContribuyente" />
+    <EntitySet Name="tblPuucRepresentanteLegals" EntityType="Self.tblPuucRepresentanteLegal" />
+    <EntitySet Name="tblSubRamas" EntityType="Self.tblSubRama" />
+    <AssociationSet Name="FK_tblACAsistencia_tblPuucContribuyente" Association="Self.FK_tblACAsistencia_tblPuucContribuyente">
+      <End Role="tblPuucContribuyente" EntitySet="tblPuucContribuyentes" />
+      <End Role="tblACAsistencia" EntitySet="tblACAsistencias" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblPuucDomicilioContribuyente_tblLocalidadINEGI" Association="Self.FK_tblPuucDomicilioContribuyente_tblLocalidadINEGI">
+      <End Role="tblLocalidadINEGI" EntitySet="tblLocalidadINEGIs" />
+      <End Role="tblPuucDomicilioContribuyente" EntitySet="tblPuucDomicilioContribuyentes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblPuucContribuyente_tblPuucContadorPublico" Association="Self.FK_tblPuucContribuyente_tblPuucContadorPublico">
+      <End Role="tblPuucContadorPublico" EntitySet="tblPuucContadorPublicoes" />
+      <End Role="tblPuucContribuyente" EntitySet="tblPuucContribuyentes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblPuucContribuyente_tblPuucRepresentanteLegal" Association="Self.FK_tblPuucContribuyente_tblPuucRepresentanteLegal">
+      <End Role="tblPuucRepresentanteLegal" EntitySet="tblPuucRepresentanteLegals" />
+      <End Role="tblPuucContribuyente" EntitySet="tblPuucContribuyentes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblPuucContribuyente_tblSubRama" Association="Self.FK_tblPuucContribuyente_tblSubRama">
+      <End Role="tblSubRama" EntitySet="tblSubRamas" />
+      <End Role="tblPuucContribuyente" EntitySet="tblPuucContribuyentes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblPuucDomicilioContribuyente_tblPuucContribuyente" Association="Self.FK_tblPuucDomicilioContribuyente_tblPuucContribuyente">
+      <End Role="tblPuucContribuyente" EntitySet="tblPuucContribuyentes" />
+      <End Role="tblPuucDomicilioContribuyente" EntitySet="tblPuucDomicilioContribuyentes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblPuucRelContribuyenteCorreos_tblPuucContribuyente" Association="Self.FK_tblPuucRelContribuyenteCorreos_tblPuucContribuyente">
+      <End Role="tblPuucContribuyente" EntitySet="tblPuucContribuyentes" />
+      <End Role="tblPuucRelContribuyenteCorreos" EntitySet="tblPuucRelContribuyenteCorreos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblPuucRelContribuyenteTelefonos_tblPuucContribuyente" Association="Self.FK_tblPuucRelContribuyenteTelefonos_tblPuucContribuyente">
+      <End Role="tblPuucContribuyente" EntitySet="tblPuucContribuyentes" />
+      <End Role="tblPuucRelContribuyenteTelefonos" EntitySet="tblPuucRelContribuyenteTelefonos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblPuucRelDomicilioContribuyente_tblPuucContribuyente" Association="Self.FK_tblPuucRelDomicilioContribuyente_tblPuucContribuyente">
+      <End Role="tblPuucContribuyente" EntitySet="tblPuucContribuyentes" />
+      <End Role="tblPuucRelDomicilioContribuyente" EntitySet="tblPuucRelDomicilioContribuyentes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblPuucRelDomicilioContribuyente_tblPuucDomicilioContribuyente" Association="Self.FK_tblPuucRelDomicilioContribuyente_tblPuucDomicilioContribuyente">
+      <End Role="tblPuucDomicilioContribuyente" EntitySet="tblPuucDomicilioContribuyentes" />
+      <End Role="tblPuucRelDomicilioContribuyente" EntitySet="tblPuucRelDomicilioContribuyentes" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

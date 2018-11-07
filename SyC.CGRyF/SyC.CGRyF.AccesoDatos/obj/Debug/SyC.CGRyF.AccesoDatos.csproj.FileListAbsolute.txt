@@ -1,0 +1,12 @@
+C:\Users\DESARROLLO\Documents\GitHub\fsw\SyC.CGRyF\SyC.CGRyF.AccesoDatos\bin\Debug\SyC.CGRyF.AccesoDatos.dll.config
+C:\Users\DESARROLLO\Documents\GitHub\fsw\SyC.CGRyF\SyC.CGRyF.AccesoDatos\bin\Debug\SyC.CGRyF.AccesoDatos.dll
+C:\Users\DESARROLLO\Documents\GitHub\fsw\SyC.CGRyF\SyC.CGRyF.AccesoDatos\bin\Debug\SyC.CGRyF.AccesoDatos.pdb
+C:\Users\DESARROLLO\Documents\GitHub\fsw\SyC.CGRyF\SyC.CGRyF.AccesoDatos\bin\Debug\EntityFramework.dll
+C:\Users\DESARROLLO\Documents\GitHub\fsw\SyC.CGRyF\SyC.CGRyF.AccesoDatos\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\DESARROLLO\Documents\GitHub\fsw\SyC.CGRyF\SyC.CGRyF.AccesoDatos\bin\Debug\EntityFramework.xml
+C:\Users\DESARROLLO\Documents\GitHub\fsw\SyC.CGRyF\SyC.CGRyF.AccesoDatos\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\DESARROLLO\Documents\GitHub\fsw\SyC.CGRyF\SyC.CGRyF.AccesoDatos\obj\Debug\SyC.CGRyF.AccesoDatos.csproj.CoreCompileInputs.cache
+C:\Users\DESARROLLO\Documents\GitHub\fsw\SyC.CGRyF\SyC.CGRyF.AccesoDatos\obj\Debug\SyC.CGRyF.AccesoDatos.csproj.CopyComplete
+C:\Users\DESARROLLO\Documents\GitHub\fsw\SyC.CGRyF\SyC.CGRyF.AccesoDatos\obj\Debug\SyC.CGRyF.AccesoDatos.dll
+C:\Users\DESARROLLO\Documents\GitHub\fsw\SyC.CGRyF\SyC.CGRyF.AccesoDatos\obj\Debug\SyC.CGRyF.AccesoDatos.pdb
+C:\Users\DESARROLLO\Documents\GitHub\fsw\SyC.CGRyF\SyC.CGRyF.AccesoDatos\obj\Debug\SyC.CGRyF.AccesoDatos.csprojAssemblyReference.cache

@@ -1,0 +1,15 @@
+C:\Users\DESARROLLO\Documents\GitHub\fsw\SyC.CGRyF\SyC.CGRyF.Negocio\bin\Debug\SyC.CGRyF.Negocio.dll.config
+C:\Users\DESARROLLO\Documents\GitHub\fsw\SyC.CGRyF\SyC.CGRyF.Negocio\bin\Debug\SyC.CGRyF.Negocio.dll
+C:\Users\DESARROLLO\Documents\GitHub\fsw\SyC.CGRyF\SyC.CGRyF.Negocio\bin\Debug\SyC.CGRyF.Negocio.pdb
+C:\Users\DESARROLLO\Documents\GitHub\fsw\SyC.CGRyF\SyC.CGRyF.Negocio\bin\Debug\EntityFramework.dll
+C:\Users\DESARROLLO\Documents\GitHub\fsw\SyC.CGRyF\SyC.CGRyF.Negocio\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\DESARROLLO\Documents\GitHub\fsw\SyC.CGRyF\SyC.CGRyF.Negocio\bin\Debug\SyC.CGRyF.AccesoDatos.dll
+C:\Users\DESARROLLO\Documents\GitHub\fsw\SyC.CGRyF\SyC.CGRyF.Negocio\bin\Debug\SyC.CGRyF.AccesoDatos.pdb
+C:\Users\DESARROLLO\Documents\GitHub\fsw\SyC.CGRyF\SyC.CGRyF.Negocio\bin\Debug\SyC.CGRyF.AccesoDatos.dll.config
+C:\Users\DESARROLLO\Documents\GitHub\fsw\SyC.CGRyF\SyC.CGRyF.Negocio\bin\Debug\EntityFramework.xml
+C:\Users\DESARROLLO\Documents\GitHub\fsw\SyC.CGRyF\SyC.CGRyF.Negocio\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\DESARROLLO\Documents\GitHub\fsw\SyC.CGRyF\SyC.CGRyF.Negocio\obj\Debug\SyC.CGRyF.Negocio.csprojAssemblyReference.cache
+C:\Users\DESARROLLO\Documents\GitHub\fsw\SyC.CGRyF\SyC.CGRyF.Negocio\obj\Debug\SyC.CGRyF.Negocio.csproj.CoreCompileInputs.cache
+C:\Users\DESARROLLO\Documents\GitHub\fsw\SyC.CGRyF\SyC.CGRyF.Negocio\obj\Debug\SyC.CGRyF.Negocio.csproj.CopyComplete
+C:\Users\DESARROLLO\Documents\GitHub\fsw\SyC.CGRyF\SyC.CGRyF.Negocio\obj\Debug\SyC.CGRyF.Negocio.dll
+C:\Users\DESARROLLO\Documents\GitHub\fsw\SyC.CGRyF\SyC.CGRyF.Negocio\obj\Debug\SyC.CGRyF.Negocio.pdb

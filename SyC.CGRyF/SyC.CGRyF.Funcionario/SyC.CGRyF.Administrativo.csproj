@@ -59,12 +59,21 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
@@ -163,9 +172,14 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\Compensaciones\CompensacionesAreaRegistration.cs" />
     <Compile Include="Areas\Compensaciones\Controllers\ContribuyentesController.cs" />
-    <Compile Include="Areas\Compensaciones\Controllers\TestController.cs" />
+    <Compile Include="Areas\Compensaciones\Controllers\CoreController.cs" />
+    <Compile Include="Areas\Compensaciones\Models\AvisoResolucion.cs" />
+    <Compile Include="Areas\Compensaciones\Models\AvisoRow.cs" />
+    <Compile Include="Areas\Compensaciones\Models\CompensacionesAplicadas.cs" />
+    <Compile Include="Areas\Compensaciones\Models\TramitesPendientes.cs" />
     <Compile Include="Areas\Condonaciones\CondonacionesAreaRegistration.cs" />
     <Compile Include="Areas\Condonaciones\Controllers\ContribuyentesController.cs" />
     <Compile Include="Areas\Condonaciones\Controllers\TestController.cs" />
@@ -187,7 +201,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Areas\Compensaciones\Views\web.config" />
-    <Content Include="Areas\Compensaciones\Views\Test\Index.cshtml" />
     <Content Include="Areas\Devoluciones\Views\web.config" />
     <Content Include="Areas\Condonaciones\Views\web.config" />
     <Content Include="Areas\ConsultasFiscales\Views\web.config" />
@@ -203,6 +216,9 @@
     <Content Include="Areas\Condonaciones\Views\Contribuyentes\Details.cshtml" />
     <Content Include="Areas\Condonaciones\Views\Contribuyentes\Edit.cshtml" />
     <Content Include="Areas\Condonaciones\Views\Contribuyentes\Index.cshtml" />
+    <Content Include="Areas\Compensaciones\Views\Test\Index.cshtml" />
+    <Content Include="Areas\Compensaciones\Views\Core\Index.cshtml" />
+    <Content Include="Areas\Compensaciones\Views\Core\Solicitud.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -236,7 +252,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Compensaciones\Models\" />
     <Folder Include="Areas\Compensaciones\Views\Shared\" />
     <Folder Include="Areas\Condonaciones\Models\" />
     <Folder Include="Areas\Condonaciones\Views\Shared\" />

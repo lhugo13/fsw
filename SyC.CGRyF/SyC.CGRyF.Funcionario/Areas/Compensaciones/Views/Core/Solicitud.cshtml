@@ -1,0 +1,534 @@
+﻿
+@model SyC.CGRyF.Funcionario.Areas.Compensaciones.Models.AvisoResolucion
+
+@{
+    ViewBag.Title = "Solicitud";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section breadcrum{
+    <li><a href="/Compensaciones/Core/Solicitud">Compensaciones</a></li>
+    <li><a href="#">Aviso de compensación</a></li>
+}
+
+<div class="row">
+    <div class="col-md-8">
+        <h1>Compensaciones</h1>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <h3>Datos generales</h3>
+        <hr class="red">
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <div class="form-group">
+            <label class="control-label" for="control-01">RFC:</label>
+            <input id="txtRfc" type="text" placeholder="RFC" class="form-control" disabled="disabled" readonly="readonly">
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="form-group">
+            <label class="control-label" for="control-01">CURP:</label>
+            <input id="txtCurp" type="text" placeholder="CURP" class="form-control" disabled="disabled" readonly="readonly">
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="form-group">
+            <label class="control-label" for="control-01">Número de expediente:</label>
+            <input id="txtExpediente" type="text" placeholder="Número de expediente" class="form-control" disabled="disabled" readonly="readonly">
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <div class="form-group">
+            <label class="control-label" for="control-01">Número de control:</label>
+            <input id="txtControl" type="text" placeholder="Número de control" class="form-control" disabled="disabled" readonly="readonly">
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="form-group">
+            <label class="control-label" for="control-01">Folio de de la declaración generadora:</label>
+            <input id="txtFolio" type="text" placeholder="Folio de de la declaración generadora" class="form-control" disabled="disabled" readonly="readonly">
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="form-group">
+            <button id="btnAnalisis" class="btn btn-default" data-toggle="modal" data-target="#dlgSiralab"><span class="glyphicon glyphicon-tasks"></span><br />Análisis de laboratorio (SIRALAB)</button>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <h3>Domicilio fiscal</h3>
+        <hr class="red">
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <div class="form-group">
+            <label class="control-label" for="control-01">Entidad federativa:</label>
+            <input id="txtEntidad" type="text" placeholder="Entidad federativa" class="form-control" disabled="disabled" readonly="readonly">
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="form-group">
+            <label class="control-label" for="control-01">Municipio:</label>
+            <input id="txtMunicipio" type="text" placeholder="Municipio" class="form-control" disabled="disabled" readonly="readonly">
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="form-group">
+            <label class="control-label" for="control-01">Localidad:</label>
+            <input id="txtLocalidad" type="text" placeholder="Localidad" class="form-control" disabled="disabled" readonly="readonly">
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <div class="form-group">
+            <label class="control-label" for="control-01">Código postal:</label>
+            <input id="txtCodigoPostal" type="text" placeholder="Código postal" class="form-control" disabled="disabled" readonly="readonly">
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="form-group">
+            <label class="control-label" for="control-01">Asentamiento humano:</label>
+            <input id="txtAsentamiento" type="text" placeholder="Asentamiento humano" class="form-control" disabled="disabled" readonly="readonly">
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="form-group">
+            <label class="control-label" for="control-01">Tipo de asentamiento:</label>
+            <input id="txtTipoAsentamiento" type="text" placeholder="Tipo de asentamiento" class="form-control" disabled="disabled" readonly="readonly">
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <div class="radio">
+            <label>
+                <input id="rbVialidad" type="radio" name="radio-01" value="1" checked="checked" disabled="disabled" readonly="readonly"> Vialidad
+            </label>
+            <label>
+                <input id="rbCamino" type="radio" name="radio-01" value="2" checked="checked" disabled="disabled" readonly="readonly"> Camino
+            </label>
+            <label>
+                <input id="rbCarretera" type="radio" name="radio-01" value="3" checked="checked" disabled="disabled" readonly="readonly"> Carretera
+            </label>
+        </div>
+    </div>
+</div>
+<div class="row">
+    @* Vialidad *@
+    <div class="col-md-4">
+        <div class="form-group">
+            <label class="control-label" for="control-01">Tipo de vialidad:</label>
+            <input id="txtTipoVialidad" type="text" placeholder="Tipo de vialidad" class="form-control" disabled="disabled" readonly="readonly">
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="form-group">
+            <label class="control-label" for="control-01">Nombre de la vialidad:</label>
+            <input id="txtVialidad" type="text" placeholder="Nombre de la vialidad" class="form-control" disabled="disabled" readonly="readonly">
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="form-group">
+            <label class="control-label" for="control-01">Entre calles:</label>
+            <input id="txtEntreCalles" type="text" placeholder="Entre calles" class="form-control" disabled="disabled" readonly="readonly">
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <div class="form-group">
+            <label class="control-label" for="control-01">Número exterior:</label>
+            <input id="txtNumeroExterior" type="text" placeholder="Número interior" class="form-control" disabled="disabled" readonly="readonly">
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="form-group">
+            <label class="control-label" for="control-01">Número interior:</label>
+            <input id="txtNumeroInterior" type="text" placeholder="Número exterior" class="form-control" disabled="disabled" readonly="readonly">
+        </div>
+    </div>
+</div>
+<div class="row">
+    @* Carretera *@
+    <div class="col-md-4">
+        <div class="form-group">
+            <label class="control-label" for="control-01">Administración:</label>
+            <input id="txtAdministracion" type="text" placeholder="Administración" class="form-control" disabled="disabled" readonly="readonly">
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="form-group">
+            <label class="control-label" for="control-01">Derecho de tránsito:</label>
+            <input id="txtTransito" type="text" placeholder="Derecho de tránsito" class="form-control" disabled="disabled" readonly="readonly">
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="form-group">
+            <label class="control-label" for="control-01">Código:</label>
+            <input id="txtCodigo" type="text" placeholder="Entidad federativa" class="form-control" disabled="disabled" readonly="readonly">
+        </div>
+    </div>
+</div>
+<div class="row">
+    @* Camino *@
+    <div class="col-md-4">
+        <div class="form-group">
+            <label class="control-label" for="control-01">Tipo:</label>
+            <input id="txtTipoCamino" type="text" placeholder="Tipo" class="form-control" disabled="disabled" readonly="readonly">
+        </div>
+    </div>
+</div>
+<div class="row">
+    @* Camino y carretera *@
+    <div class="col-md-4">
+        <div class="form-group">
+            <label class="control-label" for="control-01">Trámo:</label>
+            <input id="txtTramo" type="text" placeholder="Trámo" class="form-control" disabled="disabled" readonly="readonly">
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="form-group">
+            <label class="control-label" for="control-01">Cadenamiento:</label>
+            <input id="txtCadenamiento" type="text" placeholder="Cadenamiento" class="form-control" disabled="disabled" readonly="readonly">
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <h3>Compensaciones aplicadas</h3>
+        <hr class="red">
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <table class="table table-hover table-bordered">
+            <thead>
+                <tr>
+                    <th style="display:none"></th>
+                    <th colspan="2">Declaración que origina el saldo a favor</th>
+                    <th colspan="2">Declaración en la que compensa</th>
+                    <th colspan="4">Datos de la compensación</th>
+                </tr>
+                <tr>
+                    <th style="display:none">Id</th>
+                    <th>Folio</th>
+                    <th>Fecha de prensentación</th>
+                    <th>Folio</th>
+                    <th>Fecha de presentación</th>
+                    <th>INPC antiguo</th>
+                    <th>INPC actual</th>
+                    <th>Monto histórico</th>
+                    <th>Monto actualizado</th>
+                    <th>Decalración</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var row in Model.Compensaciones)
+                {
+                    <tr>
+                        <td style="display:none">Id</td>
+                        <td>@row.Origen_Folio.ToString()</td>
+                        <td>@row.Origen_Fecha.ToString("dd/MM/yyyy")</td>
+                        <td>@row.Compensa_Folio.ToString()</td>
+                        <td>@row.Compensa_Fecha.ToString("dd/MM/yyyy")</td>
+                        <td>@row.InpcAntiguo.ToString()</td>
+                        <td>@row.InpcActual.ToString()</td>
+                        <td>@row.MontoHistorico.ToString("0.0000")</td>
+                        <td>@row.MontoActualizado.ToString("0.0000")</td>
+                        <td><button class="btn btn-default"><span class="glyphicon glyphicon-file"></span></button></td>
+                    </tr>
+
+                }
+            </tbody>
+            @*<tfoot>
+            <tr>
+                <td style="display:none"></td>
+                <td colspan=6>
+                    <ul class="pagination">
+                        <li><a href="#">&laquo;</a></li>
+                        @foreach (var row in Model.Paginado)
+                        {
+                            <li><a href="#">@row.ToString()</a></li>
+                        }
+                        <li><a href="#">&raquo;</a></li>
+                    </ul>
+                </td>
+            </tr>
+        </tfoot>*@
+        </table>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <h3>Observaciones</h3>
+        <hr class="red">
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="form-group">
+            <label class="control-label" for="control-01">Observaciones de la resolución:</label>
+            @if (Model.Option == 1)
+            {
+                <textarea id="txtObservacionesResolucion" type="text" placeholder="Observaciones de la resolución" class="form-control" rows="5"></textarea>
+            }
+            else
+            {
+                <textarea id="txtObservacionesResolucion" type="text" placeholder="Observaciones de la resolución" class="form-control" rows="5" readonly="readonly" disabled="disabled"></textarea>
+            }
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="form-group">
+            <label class="control-label" for="control-01">Observaciones del rechazo:</label>
+            @if (Model.Option == 1)
+            {
+                <textarea id="txtObservacionesRechazo" type="text" placeholder="Observaciones del rechazo" class="form-control" rows="5" disabled="disabled" readonly="readonly"></textarea>
+            }
+            else
+            {
+                <textarea id="txtObservacionesRechazo" type="text" placeholder="Observaciones del rechazo" class="form-control" rows="5" ></textarea>
+            }
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-md-12">
+        <h3>Documentos de la resolución</h3>
+        <hr class="red">
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-16">
+        <table class="table table-hover table-striped">
+            <thead>
+                <tr>
+                    <th style="display:none">Id</th>
+                    <th>Tipo de documento</th>
+                    <th>Documento</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="display:none">1</td>
+                    <td>Aviso de compensación</td>
+                    <td><button id="btnAvisoComp" class="btn btn-default"><span class="glyphicon glyphicon-file"></span></button></td>
+                </tr>
+                <tr>
+                    <td style="display:none">2</td>
+                    <td>Acuse de notificación</td>
+                    <td><button id="btnNotificacion" class="btn btn-default"><span class="glyphicon glyphicon-file"></span></button></td>
+                </tr>
+                <tr>
+                    <td style="display:none">3</td>
+                    <td>Anexo 10A</td>
+                    <td><button id="btnAnexo" class="btn btn-default"><span class="glyphicon glyphicon-file"></span></button></td>
+                </tr>
+                <tr>
+                    <td style="display:none">4</td>
+                    <td>Declaración</td>
+                    <td><button id="btnDeclaracion" class="btn btn-default"><span class="glyphicon glyphicon-file"></span></button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-md-12">
+        <h3>Resolución</h3>
+        <hr class="red">
+    </div>
+</div>
+<div class="row">
+    @if (Model.Option == 1)
+    {
+        <div class="col-md-4">
+            <button id="btnPlantilla" class="btn btn-default"><span class="glyphicon glyphicon-cloud-download"></span><br />Descarga plantilla</button>
+        </div>
+    }
+    else
+    {
+        <div class="col-md-4">
+            <button id="btnResolucion" class="btn btn-default"><span class="glyphicon glyphicon-cloud-download"></span><br />Descarga resolucion</button>
+        </div>
+    }
+
+    <div class="col-md-4">
+        <button id="btnPlantilla" class="btn btn-default"><span class="glyphicon glyphicon-cloud-upload"></span><br />Adjuntar resolución</button>
+        <div class="form-group" style="display:none">
+            <label class="control-label" for="file-01">Adjuntar resolución:</label>
+            <input id="txtResolucion" type="file">
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="form-group">
+            <label class="control-label" for="control-01">Resolución:</label>
+            @if (Model.Option == 1)
+            {
+                <select id="cboResolucion" class="form-control">
+                    <option value="1">Procedente</option>
+                    <option value="0">Improcedente</option>
+                </select>
+            }
+            else
+            {
+                <select id="cboResolucion" class="form-control" disabled="disabled" readonly="readonly">
+                    <option value="1">Procedente</option>
+                    <option value="0">Improcedente</option>
+                </select>
+            }
+        </div>
+    </div>
+</div>
+<hr>
+<div class="row bottom-buffer">
+    <div class="col-md-16">
+        @if (Model.Option == 1)
+        {
+            <button id="btnEliminar" class="btn btn-danger">Cancelar resolución</button>
+        }
+        else
+        {
+            <button id="btnRechazar" class="btn btn-danger">Rechazar</button>
+        }
+
+        <button id="btnCancelar" class="btn btn-default">Cancelar</button>
+        <button id="btnGuardar" class="btn btn-primary">Guardar</button>
+
+        @if (Model.Option == 1)
+        {
+            <button id="btnEnviar" class="btn btn-primary">Enviar a rubricar</button>
+        }
+        else if (Model.Option == 2)
+        {
+            <button id="btnRubricar" class="btn btn-primary">Rubricar</button>
+        }
+        else
+        {
+            <button id="btnFirmar" class="btn btn-primary">Firmar</button>
+        }
+    </div>
+</div>
+
+<div id="dlgSiralab" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Análisis de laboratorio</h4>
+            </div>
+            <div class="modal-body">
+                <h3><bold>Periodo:</bold> Enero - Marzo 2018</h3>
+                <br />
+                <h4>Norma oficial mexicana NOM-001-SEMARNAT-1996</h4>
+                <hr class="red">
+                <table class="table table-hover table-striped">
+                    <thead>
+                        <tr>
+                            <th>Analisis</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><a href="#">PD-001455</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h4>Condiciones particulares de las descargas (CPD)</h4>
+                <hr class="red">
+                <table class="table table-hover table-striped">
+                    <thead>
+                        <tr>
+                            <th>Analisis</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><a href="#">PD-001455</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h4>Sólidos suspendidos totales y demanda química de oxigeno (SST y DQO)</h4>
+                <hr class="red">
+                <table class="table table-hover table-striped">
+                    <thead>
+                        <tr>
+                            <th>Analisis</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><a href="#">PD-001455</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h4>Fuente de abastecimiento</h4>
+                <hr class="red">
+                <table class="table table-hover table-striped">
+                    <thead>
+                        <tr>
+                            <th>Analisis</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><a href="#">PD-001455</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                    <h4>Sólidos disueltos totales (SDT)</h4>
+                    <hr class="red">
+                    <table class="table table-hover table-striped">
+                        <thead>
+                            <tr>
+                                <th>Analisis</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><a href="#">PD-001455</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+@section scripts{
+    <script>
+        $gmx(document).ready(function () {
+            $('#btnCancelar').click(function () {
+                window.location.href = "/Compensaciones/Core/Index";
+            });
+
+
+        });
+    </script>
+}

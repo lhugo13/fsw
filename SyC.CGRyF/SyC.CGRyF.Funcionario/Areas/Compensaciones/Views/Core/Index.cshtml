@@ -1,0 +1,152 @@
+﻿@model SyC.CGRyF.Funcionario.Areas.Compensaciones.Models.TramitesPendientes
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section breadcrum{
+    <li><a href="/Compensaciones/Core/Index">Compensaciones</a></li>
+}
+
+<div class="row">
+    <div class="col-md-8">
+        <h1>Compensaciones</h1>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="form-group">
+            <label class="control-label" for="rfc-01">RFC:</label>
+            <input class="form-control" id="rfc-01" placeholder="RFC" type="text">
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="form-group">
+            <label class="control-label" for="expediente-01">Número de expediente</label>
+            <input class="form-control" id="expediente-01" placeholder="Número de expediente" type="text">
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <div class="form-group">
+            <label class="control-label" for="control-01">Número de control:</label>
+            <input id="control-01" type="text" placeholder="Número de control" class="form-control">
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="form-group">
+            <label class="control-label" for="concepto-01">Concepto de pago:</label>
+            <select id="concepto-01" class="form-control">
+                <option value="0">Todos</option>
+                <option value="10">Aguas nacionales</option>
+                <option value="10">Contribución de mejoras</option>
+                <option value="10">Cuerpos receptores de las descargas de aguas residuales</option>
+                <option value="10">Cuota de garantía de no caducidad</option>
+                <option value="10">Extracción de materiales</option>
+                <option value="10">Multas (administrativas y formales</option>
+                <option value="10">Pago en parcialidades</option>
+                <option value="10">Servicios de trámite</option>
+                <option value="10">Sobrecuota de trasvase de aguas nacionales para uso público urbano</option>
+                <option value="10">Suministro de agua en bloque (acueductos)</option>
+                <option value="10">Suministro de agua en bloque (distritos de riego)</option>
+                <option value="10">Suministro de agua en bloque (público urbano)</option>
+                <option value="10">Uso o goce de inmuebles federales</option>
+            </select>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <div class="form-group datepicker-group">
+            <label class="control-label" for="finicial">Fecha inicial:</label>
+            <input class="form-control" id="finicial" type="text">
+            <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="form-group datepicker-group">
+            <label class="control-label" for="ffinal">Fecha final:</label>
+            <input class="form-control" id="ffinal" type="text">
+            <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4">
+    </div>
+    <div class="col-md-4">
+        <button class="btn btn-primary pull-right" type="submit">Filtrar</button>
+    </div>
+</div>
+
+<div class="row top-buffer">
+    <div class="col-md-16">
+        <table class="table table-hover table-striped">
+            <thead>
+                <tr>
+                    <th style="display:none">Id</th>
+                    <th>RFC</th>
+                    <th>Número de control</th>
+                    <th>Número de expediente</th>
+                    <th>Fecha de envío</th>
+                    <th>Estatus de la resolución</th>
+                    <th>Ver detalle (Revisor)</th>
+                    <th>Ver detalle (Rubricante)</th>
+                    <th>Ver detalle (Firmante)</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var row in Model.Registros)
+                {
+                <tr>
+                    <th style="display:none">@row.Id</th>
+                    <th>@row.Rfc</th>
+                    <th>@row.NumeroControl</th>
+                    <th>@row.NumeroExpediente</th>
+                    <th>@row.FechaEnvio.ToString("dd-MM-yyyy")</th>
+                    <th>@row.EstatusResolucion</th>
+                    <th><button id="@row.Id" type="button" class="x btn btn-primary" onclick="onclickAviso(@row.Id, 1)" ><span class="glyphicon glyphicon-pencil"></span></button></th>
+                    <th><button id="@row.Id" type="button" class="x btn btn-primary" onclick="onclickAviso(@row.Id, 2)" ><span class="glyphicon glyphicon-pencil"></span></button></th>
+                    <th><button id="@row.Id" type="button" class="x btn btn-primary" onclick="onclickAviso(@row.Id, 3)" ><span class="glyphicon glyphicon-pencil"></span></button></th>
+                </tr>
+
+                }
+            </tbody>
+            @*<tfoot>
+                    <tr>
+                        <td style="display:none"></td>
+                        <td colspan=6>
+                            <ul class="pagination">
+                                <li><a href="#">&laquo;</a></li>
+                                @foreach (var row in Model.Paginado)
+                                {
+                                    <li><a href="#">@row.ToString()</a></li>
+                                }
+                                <li><a href="#">&raquo;</a></li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tfoot>*@
+        </table>
+    </div>
+</div>
+
+@section scripts
+    {
+
+    <script>
+        function onclickAviso(id, op) {
+            window.location.href = "/Compensaciones/Core/Solicitud?id=" + id + "&op=" + op;
+        }
+
+        $gmx(document).ready(function () {
+            $('#finicial').datepicker();
+            $('#ffinal').datepicker();
+
+        });
+
+    </script>
+
+}

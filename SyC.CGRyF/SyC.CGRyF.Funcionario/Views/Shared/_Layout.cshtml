@@ -15,24 +15,24 @@
 <body>
 
     @*<div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Nombre de aplicación", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    @Html.ActionLink("Nombre de aplicación", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
+                        <li>@Html.ActionLink("Acerca de", "About", "Home")</li>
+                        <li>@Html.ActionLink("Contacto", "Contact", "Home")</li>
+                    </ul>
+                </div>
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Acerca de", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contacto", "Contact", "Home")</li>
-                </ul>
-            </div>
-        </div>
-    </div>*@
+        </div>*@
     <main class="page">
         <nav class="navbar navbar-inverse sub-navbar navbar-fixed-top">
             <div class="container">
@@ -47,42 +47,43 @@
                 </div>
                 <div class="collapse navbar-collapse" id="subenlaces">
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="/Compensaciones/Test">Compesaciones</a></li>
+                        <li><a href="/Compensaciones/Core">Compesaciones</a></li>
                         <li><a href="/Condonaciones/Test">Condonaciones</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
-        <div class="container top-buffer-submenu">
-            <div class="row">
-                <div class="col-sm-8">
-                    <ol class="breadcrumb">
-                        <li><a href="#"><i class="icon icon-home"></i></a></li>
-                        <li><a href="https://www.gob.mx">Inicio</a></li>
-                        <li><a href="/guias/grafica">Gráfica base</a></li>
-                        <li class="active">Formulario básico</li>
-                    </ol>
-                </div>
-                <div class="col-sm-4">
-                    <div class="user-credencials">
-                        <ul class="list-unstyled">
-                            <li>
-                                <span class="user-credencials__name">Alejandro Navarrete</span>
-                                <button type="button" class="btn btn-link pull-right">Salir</button>
-                            </li>
-                            <li>Información adicional</li>
-                        </ul>
+        <div class="container">
+            <div class="top-buffer-submenu">
+                <div class="row">
+                    <div class="col-sm-8">
+                        <ol class="breadcrumb">
+                            <li><a href="https://www.gob.mx"><i class="icon icon-home"></i></a></li>
+                            <li><a href="/Home/Index">Inicio</a></li>
+                            @RenderSection("breadcrum", required: false)
+                        </ol>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <div class="user-credencials">
+                            <ul class="list-unstyled">
+                                <li>
+                                    <span class="user-credencials__name">Alejandro Navarrete</span>
+                                    <button type="button" class="btn btn-link pull-right">Salir</button>
+                                </li>
+                                <li>Información adicional</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-8">
-                    @RenderBody()
-                </div>
+
+                @RenderBody()
             </div>
         </div>
     </main>
-    @Scripts.Render("~/bundles/gobmx")    
+    @Scripts.Render("~/bundles/gobmx")
+    <script src="https://code.jquery.com/jquery-1.9.0.min.js" integrity="sha256-f6DVw/U4x2+HjgEqw5BZf67Kq/5vudRZuRkljnbF344=" crossorigin="anonymous"></script>
+    <script src="https://framework-gb.cdn.gob.mx/assets/scripts/jquery-ui-datepicker.js"></script>
     @RenderSection("scripts", required: false)
 </body>
 </html>
